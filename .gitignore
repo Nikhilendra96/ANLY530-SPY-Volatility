@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+# Downloaded data stays out of the repository.
+data/
+*.csv
+*.csv.gz
+*.parquet
+*.feather
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.zip
+
+# Local environment settings and credentials.
+.env
+.env.*
+.envrc
+*.pem
+*.key
+.netrc
+.pypirc
+credentials*.json
+secrets.*
