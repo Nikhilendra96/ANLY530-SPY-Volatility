@@ -24,6 +24,11 @@ def download_spy(start=START_DATE, end=DEVELOPMENT_END):
     if data is None or data.empty:
         raise ValueError("No SPY data was downloaded. Check the connection and try again.")
 
+    duplicate_dates = data.index[data.index.duplicated()].nunique()
+    print(f"Duplicate trading dates: {duplicate_dates}")
+    if duplicate_dates:
+        raise ValueError("SPY prices contain duplicate trading dates. Check the download before continuing.")
+
     return data[["Close"]].sort_index()
 
 
